@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 from codecs import open
 from os import path
 
-__version__ = '2.8.0'
+__version__ = '1.0.0'
 
 here = path.abspath(path.dirname(__file__))
 
@@ -22,8 +22,7 @@ setup(
     version=__version__,
     description="Python Script to download hundreds of images from 'Google Images'. It is a ready-to-run code! ",
     long_description=long_description,
-    url='https://github.com/hardikvasa/google-images-download',
-    download_url='https://github.com/hardikvasa/google-images-download/tarball/' + __version__,
+    url='https://github.com/yugi-t2s/google-images-download',
     license='MIT',
     classifiers=[
         'Development Status :: 4 - Beta',
@@ -34,14 +33,13 @@ setup(
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.9',
     ],
     keywords='google images download save filter color image-search image-dataset image-scrapper image-gallery terminal command-line',
     packages=find_packages(exclude=['docs', 'tests*']),
     include_package_data=True,
-    author='Hardik Vasa',
     install_requires=install_requires,
     dependency_links=dependency_links,
-    author_email='hnvasa@gmail.com',
     entry_points={
         'console_scripts': [
             'googleimagesdownload = google_images_download.google_images_download:main'
