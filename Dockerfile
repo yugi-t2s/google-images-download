@@ -4,12 +4,15 @@ FROM base as builder
 LABEL Maintainer="yuge"
 
 RUN mkdir /google_images_download/
-WORKDIR /google_images_download/
+
 RUN ls -ltrh
-RUN cp -r google-images-download/* /google_images_download/
-RUN pip install -r /google_images_download/requirements.txt
-RUN python /google_images_download/setup.py install
+COPY . /google_images_download/
 RUN ls -ltrh /google_images_download/
 
+WORKDIR /google_images_download/
+RUN pip install -r requirements.txt
+RUN python setup.py install
+
+
 ENTRYPOINT [ "python3" ]
-CMD ["google_images_download.py --keywords "Polar bears" --limit 2"]
+CMD ["google_images_download --keywords "Polar bears" --limit 2"]
