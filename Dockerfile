@@ -1,5 +1,5 @@
-FROM python:3.7-alpine as base
-FROM base as builder
+FROM python:latest
+
 #Labels as key value pair
 LABEL Maintainer="yuge"
 
